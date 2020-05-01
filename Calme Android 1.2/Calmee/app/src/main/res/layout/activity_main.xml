@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context="fr.dev.clm.MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            app:backgroundTint="#D2161235"
+            app:fabSize="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="52dp"
+            app:srcCompat="@mipmap/menubutton" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/myMixButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="13dp"
+            app:backgroundTint="#D2161235"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menuButton"
+            app:maxImageSize="38dp"
+            app:srcCompat="@mipmap/mymixbutton" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/rateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            app:backgroundTint="#D2161235"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myMixButton"
+            app:maxImageSize="38dp"
+            app:srcCompat="@mipmap/ratebutton" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            app:backgroundTint="#D2161235"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rateButton"
+            app:maxImageSize="38dp"
+            app:srcCompat="@mipmap/share" />
+
+        <ImageView
+            android:id="@+id/viewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/header"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <FrameLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/viewHeader"
+            app:layout_constraintTop_toBottomOf="@id/viewHeader">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/collectionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutProfile"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/audio_collection"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"/>
+
+        <HorizontalScrollView
+            android:id="@+id/layoutCollection"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/collectionText"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/collection_layout_one"/>
+                <include layout="@layout/collection_layout_two"/>
+                <include layout="@layout/collection_layout_three"/>
+                <include layout="@layout/collection_layout_four"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/featuredAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/featured_audio"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutCollection"/>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/featuredAudio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:useDefaultMargins="true"
+            app:columnCount="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp">
+
+            <FrameLayout
+                android:id="@+id/thunderStormOption"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                app:layout_columnWeight="1">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/catfive"
+                    app:layout_gravity="fill"
+                    app:riv_corner_radius="6dp" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:lines="1"
+                    android:textSize="20sp"
+                    android:text="@string/eternal_thunderstorm" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/nightRainOption"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                app:layout_columnWeight="1">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/catsix"
+                    app:layout_gravity="fill"
+                    app:riv_corner_radius="6dp" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:lines="1"
+                    android:textSize="20sp"
+                    android:text="@string/the_sound_of_rain_at_night" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/nightCityOption"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                app:layout_columnWeight="1">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/catseven"
+                    app:layout_gravity="fill"
+                    app:riv_corner_radius="6dp" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:lines="1"
+                    android:textSize="20sp"
+                    android:text="@string/night_park_in_the_city" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cicadasOption"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                app:layout_columnWeight="1">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/cateight"
+                    app:layout_gravity="fill"
+                    app:riv_corner_radius="6dp" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:lines="1"
+                    android:textSize="16sp"
+                    android:text="@string/the_quite_sound_of_night_cicadas" />
+
+            </FrameLayout>
+
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/catfive"-->
+<!--                app:layout_columnWeight="1"-->
+<!--                app:layout_gravity="fill"-->
+<!--                app:riv_corner_radius="6dp" />-->
+
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/catsix"-->
+<!--                app:layout_columnWeight="1"-->
+<!--                app:layout_gravity="fill"-->
+<!--                app:riv_corner_radius="6dp"/>-->
+
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/catseven"-->
+<!--                app:layout_columnWeight="1"-->
+<!--                app:layout_gravity="fill"-->
+<!--                app:riv_corner_radius="6dp"/>-->
+
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/cateight"-->
+<!--                app:layout_columnWeight="1"-->
+<!--                app:layout_gravity="fill"-->
+<!--                app:riv_corner_radius="6dp"/>-->
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <TextView
+            android:id="@+id/calmZone"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="72dp"
+            android:text="@string/calm_zone"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/myMixButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rateText"
+            android:layout_width="118dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/rate_the_app"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rateButton"
+            app:layout_constraintTop_toBottomOf="@+id/calmZone" />
+
+        <TextView
+            android:id="@+id/shareText"
+            android:layout_width="125dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="1dp"
+            android:text="@string/share_the_app"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/shareButton"
+            app:layout_constraintTop_toBottomOf="@+id/rateText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

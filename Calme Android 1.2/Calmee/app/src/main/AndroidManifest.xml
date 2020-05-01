@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.dev.clm">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:hardwareAccelerated="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="fr.dev.clm.splash_activity"
+            android:theme="@style/FullScreen"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="fr.dev.clm.MainActivity"
+            android:theme="@style/FullScreen">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioOne.AudioOneActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioTwo.AudioTwoActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioThree.AudioThreeActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioFour.AudioFourActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioFive.AudioFiveActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioSix.AudioSixActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioSeven.AudioSevenActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioEight.AudioEightActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="fr.dev.clm.AudioMix.AudioMixActivity"
+            android:theme="@style/FullScreen"
+            android:label="@string/app_name">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/AdMobAppId" />
+
+    </application>
+
+</manifest>

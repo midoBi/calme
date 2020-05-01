@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/catThreeImage"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="6dp"
+        android:src="@mipmap/catthree">
+    </com.makeramen.roundedimageview.RoundedImageView>
+
+    <Button
+        android:id="@+id/categoryThreeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="#002196F3"
+        android:text="@string/amazing_nigh_fire"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="15sp" />
+
+</LinearLayout>

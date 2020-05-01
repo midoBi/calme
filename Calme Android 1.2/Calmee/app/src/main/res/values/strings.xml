@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calmee</string>
+    <string name="audio_collection">Audio collection</string>
+    <string name="featured_audio">Featured audio</string>
+    <string name="morning_at_sea">Morning at sea</string>
+    <string name="evening_in_the_forest">Evening in the forest</string>
+    <string name="amazing_nigh_fire">Amazing nigh fire</string>
+    <string name="swallows_and_river">Swallows and river</string>
+    <string name="eternal_thunderstorm">Eternal thunderstorm</string>
+    <string name="the_sound_of_rain_at_night">The sound of rain at night</string>
+    <string name="the_quite_sound_of_night_cicadas">The quite sound of night cicadas</string>
+    <string name="night_park_in_the_city">Night park in the city</string>
+    <string name="tip_one">Amazing tip: slow and full breaths can calm you. Try a quick breathing exercise to get back to a more relaxed state.</string>
+    <string name="my_calm_zone">My calm zone</string>
+    <string name="calm_zone">CALM ZONE</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="share_the_app">Share the app</string>
+
+    <string name="AdMobAppId">ca-app-pub-7175817548312954~4622670860</string>
+    <string name="AdMobAppBannerId">ca-app-pub-7175817548312954/3356872419</string>
+    <string name="AdMobAppInterstitialId">ca-app-pub-7175817548312954/3221141042</string>
+</resources>
